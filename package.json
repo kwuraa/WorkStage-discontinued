@@ -1,0 +1,23 @@
+{
+  "name": "workstage",
+  "version": "1.0.0",
+  "description": "WorkStage é um app em desenvolvimento para gerenciar o progresso de produção. Ele permite cadastrar produtos, acompanhar suas etapas e visualizar o status em tempo real. Com foco em organização e eficiência, o app visa otimizar o fluxo de trabalho, oferecendo controle simples e prático das fases de produção.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwuraa/WorkStage.git"
+  },
+  "author": "Matheus Morais Kawamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwuraa/WorkStage/issues"
+  },
+  "homepage": "https://github.com/kwuraa/WorkStage#readme",
+  "devDependencies": {
+    "electron": "^34.0.1"
+  }
+}

@@ -1,0 +1,100 @@
+:root {
+  --dark-background-color: #292929;
+  --light-background-color: ;
+  --text-icons-color: #e2e1e4;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/src/public/fonts/Poppins-Medium.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: 000;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15pt;
+  color: var(--text-icons-color);
+
+  box-sizing: border-box;
+}
+
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  width: 100vw;
+  height: 100vh;
+
+  border: 1px solid #343b48;
+
+  -webkit-box-sizing: border-box;
+}
+
+.mainApp > .topBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  border-bottom: 3px solid #343b48;
+  background-color: #1b1d23;
+  -webkit-user-select: none;
+}
+
+.topBar > .titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.topBar .titleBarBtns {
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  height: 40px;
+}
+
+.titleBar > .title {
+  margin-left: 10px;
+  width: 100%;
+  line-height: 30px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  -webkit-app-region: drag;
+}
+
+.titleBarBtns > .topBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.titleBarBtns > .topBtn:hover {
+  background-color: #272c36;
+}
+.titleBarBtns > .topBtn:active {
+  background-color: #6d4f8c;
+}
+
+.titleBarBtns > .minimizeBtn {
+  background-image: url(../img/minimize.svg);
+}
+.titleBarBtns > .maximizeBtn {
+  background-image: url(../img/square.svg);
+}
+.titleBarBtns > .restoreBtn {
+  /* background-image: url(../img/close.svg); */
+}
+.titleBarBtns > .closeBtn {
+  background-image: url(../img/close.svg);
+}

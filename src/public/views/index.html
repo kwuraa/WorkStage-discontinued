@@ -8,10 +8,27 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline'"
     />
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>WorkStages</title>
   </head>
   <body>
-    <h1>MATHEUS MORAIS KAWAMURA</h1>
+    <div class="mainApp">
+      <div class="topBar">
+        <div class="titleBar">
+          <div class="title">WorkStages</div>
+          <div class="titleBarBtns porra">
+            <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
+            <button id="maxResBtn" class="topBtn maximizeBtn"></button>
+            <button id="closeBtn" class="topBtn closeBtn"></button>
+          </div>
+        </div>
+      </div>
+      <div class="contentArea">
+        <div id="mytopLabel" class="topLabel"></div>
+        <div id="mySideBar" class="leftMenu"></div>
+        <div class="contentPages"></div>
+      </div>
+    </div>
 
     <script src="render.js"></script>
   </body>

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/kwuraa/WorkStage#readme",
   "devDependencies": {
     "electron": "^34.0.1"
+  },
+  "dependencies": {
+    "@material-design-icons/font": "^0.14.14"
   }
 }

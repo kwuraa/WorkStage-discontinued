@@ -108,17 +108,35 @@
   border-radius: 0px 25px 25px 0px;
 }
 
+.searchBtn {
+  margin: 10px 0 10px 20px;
+}
+
+/* * LEFT MENU */
+
 .contentArea .leftMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
-  width: 75px;
   height: 100%;
   background-color: var(--dark-color-elements);
   box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.14), 3px 0px 14px rgba(0, 0, 0, 0.12),
     5px 0px 5px rgba(0, 0, 0, 0.2);
   transition: 0.4s;
+  align-items: flex-start;
+}
+
+.closed {
+  width: 75px;
+}
+
+.opened {
+  width: 278px;
 }
 
 .contentArea .contentPages {
@@ -133,33 +151,87 @@
   display: -webkit-box;
 }
 
-.leftMenu {
+.buttons {
   display: flex;
+  width: 55px;
+  height: 100%;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-top: 146px;
   gap: 45px;
 }
 
+.unitButtons {
+  display: flex;
+  gap: 15px;
+}
+
 .leftBtn {
+  display: flex;
+  align-items: center;
   border: none;
   outline: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.4s;
 }
 
-.leftBtn svg {
-  width: 55px;
-  height: 55px;
+.leftBtn {
+  font-size: 55px;
   transition: 0.2s;
 }
 
-.searchBtn {
-  margin: 10px 0 10px 20px;
+.leftBtn:hover,
+.searchBtn:hover,
+.labelBtn:hover {
+  color: #805ea1;
+  cursor: pointer;
 }
 
-.leftBtn svg:hover {
-  fill: #805ea1;
-  cursor: pointer;
+.contentArea .logoDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px 13px 0 0;
+  height: 85px;
+  background-color: #d9d9d9;
+  box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, 0.74),
+    -3px 0px 14px 0px rgba(110, 77, 139, 0.12), -5px 0px 5px rgba(0, 0, 0, 0);
+  transition: 0.4s;
+}
+
+.logo,
+.logoClose {
+  display: inline-block;
+  background-image: url("../img/icons/oldlogo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 56px;
+  height: 56px;
+  transition: 0.4s;
+}
+
+.logoOpen {
+  background-image: url("../img/icons/oldLogoOpen.svg");
+  width: 245px;
+}
+
+.labelBtn {
+  display: flex;
+  height: 55px;
+  width: 100px;
+}
+
+.labelClose {
+  opacity: 0;
+  pointer-events: none;
+  cursor: none;
+}
+
+.labelOpen {
+  align-items: center;
+  opacity: 1;
+  transition: 0.4s;
 }

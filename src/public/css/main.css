@@ -44,11 +44,9 @@
 }
 
 .titleBar .title {
-  margin-left: 10px;
+  margin: 5px 0 5px 10px;
   width: 100%;
   line-height: 30px;
-  margin-top: 5px;
-  padding-bottom: 5px;
   -webkit-app-region: drag;
 }
 
@@ -199,11 +197,7 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.4s;
-}
-
-.leftBtn {
   font-size: 55px;
-  transition: 0.2s;
 }
 
 .leftBtn:hover,
@@ -250,11 +244,10 @@
 .labelClose {
   opacity: 0;
   pointer-events: none;
-  cursor: none;
 }
 
 .labelOpen {
   align-items: center;
   opacity: 1;
-  transition: 0.4s;
+  transition: opacity 0.4s ease-in-out;
 }

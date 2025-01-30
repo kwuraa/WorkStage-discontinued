@@ -46,11 +46,15 @@
         <!-- Barra de cima -->
         <div id="mytopLabel" class="topLabel">
           <div class="content">
-              <button
+              <div class="searchBar">
+                <button
                 id="searchBtn"
                 class="leftBtn searchBtn icon-search"
-                aria-label="Pesquisar"s
+                aria-label="Pesquisar"
               ></button>
+                <input id="searchInput" type="text" placeholder="Search" id="search">
+              </div>
+              <div class="overlayInfos"></div>
               <div class="infos">
                 <span class="id">ID</span>
                 <span class="produtos">Produtos</span>
@@ -68,9 +72,7 @@
                 class="menuBtn leftBtn icon-menu"
                 aria-label="Alternar menu"
               ></button>
-              <label for="showHideMenus" class="labelBtn labelClose"
-                >Menu</label
-              >
+              <label for="showHideMenus" class="labelBtn labelClose">Menu</label>
             </div>
             <div class="unitButtons">
               <button
@@ -87,7 +89,7 @@
                 class="recentBtn leftBtn icon-history"
                 aria-label="Recentes"
               ></button>
-              <label for="recentBtn" class="labelBtn labelClose"
+              <label for="recentsBtn" class="labelBtn labelClose"
                 >Recentes</label
               >
             </div>
@@ -105,7 +107,7 @@
             <div id="oldLogo" class="logo logoClose"></div>
           </div>
         </div>
-
+        <div id="overlay"></div>
         <div class="contentPages"></div>
       </div>
     </div>

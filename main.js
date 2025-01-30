@@ -6,10 +6,10 @@ const ipc = ipcMain;
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 1280,
-    height: 720,
-    minWidth: 940,
-    minHeight: 560,
+    width: 1720,
+    height: 920,
+    minWidth: 1280,
+    minHeight: 720,
     frame: false,
     // titleBarStyle: "hidden",
     webPreferences: {

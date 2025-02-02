@@ -21,6 +21,10 @@
     "electron": "^34.0.1"
   },
   "dependencies": {
-    "@material-design-icons/font": "^0.14.14"
+    "@material-design-icons/font": "^0.14.14",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "latest": "^0.2.0",
+    "sqlite3": "^5.1.7"
   }
 }

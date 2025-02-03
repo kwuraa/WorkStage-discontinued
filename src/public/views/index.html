@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- EVITAR ATAQUES DE CROSS SITE SCRIPTING (INJEÇÃO DE DADOS) -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
+   
 
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/main.css" />
@@ -110,7 +107,7 @@
         <div id="overlay"></div>
         <div class="contentPages">
           <div class="contentProductList"><ul>
-           <div  class="contentItemList">
+           <div  class="contentItemList" id="contentItemList">
             <li class="infos "><span id="idProduto">12</span><span id="produto">XXXXXXX</span><span id="dataCadastro">12/12/2000</span> <span id="status">pendente</span></li>
             <li class="infos "><span id="idProduto">12</span><span id="produto">XXXXXXX</span><span id="dataCadastro">12/12/2000</span> <span id="status">pendente</span></li>
             <li class="infos "><span id="idProduto">12</span><span id="produto">XXXXXXX</span><span id="dataCadastro">12/12/2000</span> <span id="status">pendente</span></li>
@@ -121,6 +118,7 @@
       </div>
     </div>
 
+    <script src="renderer.js"></script>
     <script src="appFunctions.js"></script>
   </body>
 </html>

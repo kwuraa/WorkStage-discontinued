@@ -111,7 +111,7 @@
 
 
 #overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -218,6 +218,10 @@
 
 .searchBtn {
   padding: 2px 10px;
+  .searchBar {
+    transition: all 0.3s ease-in-out;
+  }
+  
 }
 
 
@@ -236,8 +240,9 @@
   background-color: var(--dark-color-elements);
   box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.14), 3px 0px 14px rgba(0, 0, 0, 0.12),
     5px 0px 5px rgba(0, 0, 0, 0.2);
-  transition: 0.4s;
   align-items: flex-start;
+  transition: width 0.4s ease-in-out;
+  
 }
 
 .closed {
@@ -304,7 +309,8 @@
   background-color: #d9d9d9;
   box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, 0.74),
     -3px 0px 14px 0px rgba(110, 77, 139, 0.12), -5px 0px 5px rgba(0, 0, 0, 0);
-  transition: 0.4s;
+  transition: width 0.4s ease-in-out;
+  
 }
 
 .logo,
@@ -339,3 +345,37 @@
   opacity: 1;
   transition: opacity 0.4s ease-in-out;
 }
+
+
+.modal {
+  display: none; 
+  position: fixed; /* Alterado para fixed para cobrir toda a tela */
+  z-index: 9999; /* Valor alto para sobrepor tudo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--dark-background-color);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 80%;
+  max-width: 200vh;
+  max-height: 75vh; /* Adicionado para limitar o tamanho */
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+

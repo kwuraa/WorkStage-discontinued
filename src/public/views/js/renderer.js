@@ -54,14 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
   async function renderProdutoDetalhes(produto) {
     // Preenche os dados básicos do produto
     modalProductContent.innerHTML = `
+    <div class="modalDetails">
       <h2>Detalhes do Produto</h2>
+      <h3> ${produto.nome} </h3>
+      <span> Status: ${produto.status} </span>
+    </div>
+    <div class="description">
+    <h3 class="titles">Descrição:</h3> 
+    <div class="displayModal"
       <p><strong>ID:</strong> ${produto.id}</p>
-      <p><strong>Nome:</strong> ${produto.nome}</p>
       <p><strong>Data de Cadastro:</strong> ${formatDate(produto.data_cadastro)}</p>
-      <p><strong>Status:</strong> ${produto.status}</p>
+      </div>
+    </div>
+    <div class="process">
       <div id="processosContainer">
         <p>Carregando processos...</p>
       </div>
+    </div>
+    <div class="buttons">
+    <button></button>
+    <button></button>
+    <button></button>
+    </div>
     `;
 
     // Busca os processos relacionados ao produto
@@ -79,16 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Monta a lista de processos
-      let htmlProcessos = '<h3>Processos:</h3><ul>';
+      let htmlProcessos = '<h3 class="titles">Produção:</h3><ul><div class="displayModal">';
       processos.forEach(processo => {
-        htmlProcessos += `
+        htmlProcessos += ` 
           <li>
-            <strong>Nome:</strong> ${processo.nome} - 
-            <strong>Status:</strong> ${processo.status}
+            <button>${processo.nome}</button>
           </li>
+         
         `;
       });
-      htmlProcessos += '</ul>';
+      htmlProcessos += ' </div> </ul>';
       processosContainer.innerHTML = htmlProcessos;
     } catch (error) {
       console.error("Erro ao buscar processos:", error);

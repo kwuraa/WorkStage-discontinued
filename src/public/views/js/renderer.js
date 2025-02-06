@@ -71,10 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Carregando processos...</p>
       </div>
     </div>
-    <div class="buttons">
-    <button></button>
-    <button></button>
-    <button></button>
+    <div class="btnModal">
+    <button class="icon-plus"></button>
+    <button class="icon-edit"></button>
+    <button class="icon-trash"></button>
     </div>
     `;
 

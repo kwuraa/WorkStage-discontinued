@@ -10,7 +10,15 @@
     url("../fonts/icomoon.ttf?qsy80o") format("truetype"),
     url("../fonts/icomoon.woff?qsy80o") format("woff"),
     url("../fonts/icomoon.svg?qsy80o#icomoon") format("svg");
-    src:  url('../fonts/icons.eot?wmodx2');
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "icomoon";
+  src:  url('../fonts/icons.eot?wmodx2');
   src:  url('../fonts/icons.eot?wmodx2#iefix') format('embedded-opentype'),
     url('../fonts/icons.ttf?wmodx2') format('truetype'),
     url('../fonts/incos.woff?wmodx2') format('woff'),

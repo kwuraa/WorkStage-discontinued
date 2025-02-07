@@ -16,18 +16,6 @@
   font-display: block;
 }
 
-@font-face {
-  font-family: "icomoon";
-  src:  url('../fonts/icons.eot?wmodx2');
-  src:  url('../fonts/icons.eot?wmodx2#iefix') format('embedded-opentype'),
-    url('../fonts/icons.ttf?wmodx2') format('truetype'),
-    url('../fonts/incos.woff?wmodx2') format('woff'),
-    url('../fonts/icons.svg?wmodx2#icomoon') format('svg');
-
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
 
 [class^="icon-"],
 [class*=" icon-"] {
@@ -63,14 +51,55 @@
 .icon-menu:before {
   content: "\e905";
 }
-.icon-edit:before {
-  content: "\e906";
+
+.iconEdit::before {
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/icons/edit.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 35%;
+  transition: 0.4s;
 }
-.icon-plus:before {
-  content: "\e908";
+
+.iconPlus::before {
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/icons/plus.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 35%;
+  transition: 0.4s;
 }
-.icon-trash:before {
-  content: "\e907";
+
+.iconTrash::before {
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/icons/trash.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 35%;
+  transition: 0.4s;
+}
+
+.iconTrash:hover::before {
+  background-image: url("../img/icons/trash-hover.svg");
+  cursor: pointer;
+}
+.iconPlus:hover::before {
+  background-image: url("../img/icons/plus-hover.svg");
+  cursor: pointer;
+
+}
+.iconEdit:hover::before {
+  background-image: url("../img/icons/edit-hover.svg");
+  cursor: pointer;  
 }
 
 

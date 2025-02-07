@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
     <div class="btnModal">
-    <button class="icon-plus"></button>
-    <button class="icon-edit"></button>
-    <button class="icon-trash"></button>
+    <button class="iconPlus"></button>
+    <button class="iconEdit"></button>
+    <button class="iconTrash"></button>
     </div>
     `;
 

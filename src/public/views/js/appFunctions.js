@@ -24,6 +24,9 @@ function toggleMenu(state) {
       label.classList.toggle("labelOpen", isLeftMenuIsOpened);
       label.classList.toggle("labelClose", !isLeftMenuIsOpened);
     }
+
+    button.classList.toggle("hover", isLeftMenuIsOpened);
+    button.classList.toggle("hover", !isLeftMenuIsOpened);
   });
 
   displayLogo.classList.toggle("opened", isLeftMenuIsOpened);
@@ -32,9 +35,41 @@ function toggleMenu(state) {
   logo.classList.toggle("logoOpen", isLeftMenuIsOpened);
   logo.classList.toggle("logoClose", !isLeftMenuIsOpened);
 
+
+
   overlay.style.display = isLeftMenuIsOpened ? "block" : "none";
+
 }
 
+function atualizarEstadoBotoes() {
+  // Seleciona a barra lateral
+  const sidebar = document.getElementById("mySideBar");
+  // Seleciona somente os botões dentro da sidebar, exceto o menuBtn
+  const botoes = sidebar.querySelectorAll("button:not(.menuBtn)");
+
+  // Se a sidebar estiver fechada, desativa os botões; se não, ativa
+  if (sidebar.classList.contains("closed")) {
+    botoes.forEach(botao => {
+      botao.disabled = true; // desativa o botão
+      botao.classList.remove("hover")
+      // botao.classList.add("botao-inativo");
+    });
+  } else {
+    botoes.forEach(botao => {
+      botao.disabled = false; // ativa o botão
+      botao.classList.add("hover")
+      // botao.classList.remove("botao-inativo");
+    });
+  }
+}
+const menuBtn = document.getElementById("showHideMenus");
+menuBtn.addEventListener("click", () => {
+  const sidebar = document.getElementById("mySideBar");
+  // Alterna a classe 'closed'
+  sidebar.classList.toggle("closed");
+  // Atualiza o estado dos outros botões
+  atualizarEstadoBotoes();
+});
 
 // SEARCH BAR
 

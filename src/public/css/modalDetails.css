@@ -10,10 +10,10 @@
     background-color: var(--dark-background-color);
     margin: 10vh auto;
     padding: 40px;
-    width: 90vw;
-    max-width: 1200px;
+    width: 75vw;
+    max-width: 1400px;
     height: auto;
-    max-height: 85vh;
+    max-height: 90vh;
     border-radius: 20px;
     overflow: auto;
 }
@@ -28,6 +28,8 @@
 }
 
 #modalProductContent {
+    justify-content: center ;
+    justify-items: center;
     display: grid;
     grid-template-areas:
         "head head"
@@ -36,18 +38,31 @@
     gap: 15px;
 }
 
+#processosContainer h3 {
+    position: fixed;
+    top: 30%;
+    left: auto;
+}
+
 .displayModal {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+.displayDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 14px;
+}
+
 .modalDetails {
     grid-area: head;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 75px;
     background-color: var(--dark-color-elements);
     box-shadow: 0px 8px 10px 2px rgba(110, 77, 139, 0.74),
@@ -55,7 +70,7 @@
                 0px 5px 5px rgba(0, 0, 0, 0);
     border-radius: 20px;
     padding: 0 25px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .description, .btnModal, .process {
@@ -68,10 +83,17 @@
 }
 
 .description {
+    display: flex;
+    flex-direction: column;
     grid-area: description;
     width: 100%;
     max-width: 576px;
     height: 595px;
+}
+
+.descricaoInfos {
+    display: flex;
+    flex-direction: column;
 }
 
 .btnModal {
@@ -87,9 +109,14 @@
 
 .process {
     grid-area: production;
-    width: 100%;
+    width: 88%;
     max-width: 708px;
     height: auto;
+    max-height: 320px;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .process li {

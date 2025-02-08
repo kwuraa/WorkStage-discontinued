@@ -35,4 +35,13 @@
   transform: translateY(-6px);
 }
 
+#produto { 
+    max-width: 130px;
+    min-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
 

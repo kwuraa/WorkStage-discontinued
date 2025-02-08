@@ -127,35 +127,42 @@ document.addEventListener("DOMContentLoaded", () => {
     produtos.forEach(produto => {
       const li = document.createElement("li");
       li.classList.add("infos");
-
+  
       li.innerHTML = `
         <span id="idProduto">${produto.id}</span>
         <span id="produto">${produto.nome}</span>
         <span id="dataCadastro">${formatDate(produto.data_cadastro)}</span>
         <span id="status">${produto.status}</span> 
       `;
-
-      // Ao clicar em um produto, abre o modal e exibe seus detalhes, incluindo os processos
+  
+      // Ao clicar em um produto, abre o modal
       li.addEventListener("click", function() {
         renderProdutoDetalhes(produto);
-        productModal.style.display = "block";
+        productModal.style.display = "flex";
+        setTimeout(() => productModal.classList.add("show"), 10);
       });
-
+  
       contentItemList.appendChild(li);
     });
   }
-
-  // Fecha o modal quando o usuário clicar no "x"
-  spanClose.addEventListener("click", function() {
-    productModal.style.display = "none";
-  });
-
+  
+  // Fecha o modal
+  function closeModal() {
+    productModal.classList.remove("show");
+    setTimeout(() => {
+      productModal.style.display = "none";
+    }, 400);
+  }
+  
+  // Evento para fechar ao clicar no "x"
+  spanClose.addEventListener("click", closeModal);
+  
   // Fecha o modal se o usuário clicar fora do conteúdo dele
   window.addEventListener("click", function(event) {
     if (event.target === productModal) {
-      productModal.style.display = "none";
+      closeModal();
     }
-  });
+  });  
 
   // Carrega os produtos assim que a página for carregada
   fetchProdutos();

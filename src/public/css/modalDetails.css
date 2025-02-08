@@ -1,9 +1,22 @@
 .modal {
-    display: none;
+    display: flex; /* Mantemos flex para centralizar */
+    align-items: center;
+    justify-content: center;
     position: fixed;
     z-index: 9999;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
+
+    /* Oculto por padrão */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Classe que ativa a exibição suave */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-content {
@@ -16,6 +29,14 @@
     max-height: 90vh;
     border-radius: 20px;
     overflow: auto;
+    
+    /* Efeito de deslizamento */
+    transform: translateY(-20px);
+    transition: transform 0.4s ease-in-out;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
 }
 
 .close {
@@ -40,7 +61,7 @@
 
 #processosContainer h3 {
     position: fixed;
-    top: 30%;
+    top: 23%;
     left: auto;
 }
 

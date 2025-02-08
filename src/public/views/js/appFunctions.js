@@ -2,74 +2,72 @@
 const mySideBar = document.getElementById("mySideBar");
 const displayLogo = document.getElementById("displayLogo");
 const logo = document.getElementById("oldLogo");
-const overlay = document.getElementById("overlay")
+const overlay = document.getElementById("overlay");
 
+const menuBtn = document.getElementById("showHideMenus");
+const buttons = document.querySelectorAll(".buttons .unitButtons");
 
-const buttons = document.querySelectorAll(" .buttons .unitButtons");
-
-var isLeftMenuIsOpened = false;
+let isLeftMenuIsOpened = false;
 
 function toggleMenu(state) {
-  isLeftMenuIsOpened = state !== undefined ? state : !isLeftMenuIsOpened;
+  // Define o estado do menu: se 'state' foi informado, usa-o; caso contrário, inverte o estado atual
+  isLeftMenuIsOpened = (state !== undefined) ? state : !isLeftMenuIsOpened;
 
+  // Atualiza classes da sidebar
   mySideBar.classList.toggle("opened", isLeftMenuIsOpened);
   mySideBar.classList.toggle("closed", !isLeftMenuIsOpened);
 
-  showHideMenus.classList.toggle("icon-menu-open", isLeftMenuIsOpened);
-  showHideMenus.classList.toggle("icon-menu", !isLeftMenuIsOpened);
+  // Atualiza classes do botão de menu
+  menuBtn.classList.toggle("icon-menu-open", isLeftMenuIsOpened);
+  menuBtn.classList.toggle("icon-menu", !isLeftMenuIsOpened);
 
+  // Atualiza cada botão (e seus labels, se houver)
   buttons.forEach((button) => {
     const label = button.querySelector("label");
     if (label) {
       label.classList.toggle("labelOpen", isLeftMenuIsOpened);
       label.classList.toggle("labelClose", !isLeftMenuIsOpened);
     }
-
     button.classList.toggle("hover", isLeftMenuIsOpened);
-    button.classList.toggle("hover", !isLeftMenuIsOpened);
   });
 
+  // Atualiza classes dos logos
   displayLogo.classList.toggle("opened", isLeftMenuIsOpened);
   displayLogo.classList.toggle("closed", !isLeftMenuIsOpened);
 
   logo.classList.toggle("logoOpen", isLeftMenuIsOpened);
   logo.classList.toggle("logoClose", !isLeftMenuIsOpened);
 
-
-
+  // Exibe ou esconde o overlay
   overlay.style.display = isLeftMenuIsOpened ? "block" : "none";
 
+  // Atualiza o estado dos botões dentro da sidebar
+  atualizarEstadoBotoes();
 }
 
 function atualizarEstadoBotoes() {
-  // Seleciona a barra lateral
+  // Seleciona a sidebar e, dentro dela, os botões que não possuem a classe 'menuBtn'
   const sidebar = document.getElementById("mySideBar");
-  // Seleciona somente os botões dentro da sidebar, exceto o menuBtn
   const botoes = sidebar.querySelectorAll("button:not(.menuBtn)");
 
-  // Se a sidebar estiver fechada, desativa os botões; se não, ativa
+  // Se a sidebar estiver fechada, desativa os botões; se estiver aberta, ativa-os
   if (sidebar.classList.contains("closed")) {
     botoes.forEach(botao => {
-      botao.disabled = true; // desativa o botão
-      botao.classList.remove("hover")
-      // botao.classList.add("botao-inativo");
+      botao.disabled = true;
+      botao.classList.remove("hover");
     });
   } else {
     botoes.forEach(botao => {
-      botao.disabled = false; // ativa o botão
-      botao.classList.add("hover")
-      // botao.classList.remove("botao-inativo");
+      botao.disabled = false;
+      botao.classList.add("hover");
     });
   }
 }
-const menuBtn = document.getElementById("showHideMenus");
-menuBtn.addEventListener("click", () => {
-  const sidebar = document.getElementById("mySideBar");
-  // Alterna a classe 'closed'
-  sidebar.classList.toggle("closed");
-  // Atualiza o estado dos outros botões
-  atualizarEstadoBotoes();
-});
+
+// Event listeners para o menu
+menuBtn.addEventListener("click", () => toggleMenu());
+overlay.addEventListener("click", () => toggleMenu(false));
+
 
 // SEARCH BAR
 
@@ -78,25 +76,22 @@ const searchInput = document.querySelector('.searchBar input');
 const overlayInfos = document.querySelector('.overlayInfos');
 
 searchBar.addEventListener('click', () => {
-    searchBar.classList.add('open');
-    overlayInfos.style.display = 'block'; 
-    overlayInfos.style.opacity = '1'; 
-    searchInput.focus();
+  searchBar.classList.add('open');
+  overlayInfos.style.display = 'block'; 
+  overlayInfos.style.opacity = '1'; 
+  searchInput.focus();
 });
-
 
 document.addEventListener('click', (event) => {
-    if (!searchBar.contains(event.target) && searchBar.classList.contains('open')) {
-        searchBar.classList.add('closing');
-        overlayInfos.style.opacity = '0'; 
-        
-        setTimeout(() => {
-            searchBar.classList.remove('open', 'closing');
-            overlayInfos.style.display = 'none'; 
-        }, 300);
-    }
+  if (!searchBar.contains(event.target) && searchBar.classList.contains('open')) {
+    searchBar.classList.add('closing');
+    overlayInfos.style.opacity = '0'; 
+    
+    setTimeout(() => {
+      searchBar.classList.remove('open', 'closing');
+      overlayInfos.style.display = 'none'; 
+    }, 300);
+  }
 });
 
 
-showHideMenus.addEventListener("click", () => toggleMenu());
-overlay.addEventListener("click", () => toggleMenu(false));

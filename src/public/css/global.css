@@ -6,7 +6,8 @@
 @font-face {
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot?qsy80o");
-  src: url("../fonts/icomoon.eot?qsy80o#iefix") format("embedded-opentype"),
+  src:
+    url("../fonts/icomoon.eot?qsy80o#iefix") format("embedded-opentype"),
     url("../fonts/icomoon.ttf?qsy80o") format("truetype"),
     url("../fonts/icomoon.woff?qsy80o") format("woff"),
     url("../fonts/icomoon.svg?qsy80o#icomoon") format("svg");
@@ -16,10 +17,8 @@
   font-display: block;
 }
 
-
 [class^="icon-"],
 [class*=" icon-"] {
-
   font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
@@ -95,13 +94,11 @@
 .iconPlus:hover::before {
   background-image: url("../img/icons/plus-hover.svg");
   cursor: pointer;
-
 }
 .iconEdit:hover::before {
   background-image: url("../img/icons/edit-hover.svg");
-  cursor: pointer;  
+  cursor: pointer;
 }
-
 
 * {
   margin: 0;

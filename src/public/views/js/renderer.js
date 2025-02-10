@@ -3,7 +3,6 @@ const maxResBtn = document.getElementById("maxResBtn");
 
 const ipc = ipcRenderer;
 
-
 // buttons | minimize | maximize | restore | close
 minimizeBtn.addEventListener("click", () => {
   ipc.send("minimizeApp");
@@ -80,7 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Busca os processos relacionados ao produto
     try {
-      const response = await fetch(`${API_URL}/produtos/${produto.id}/processos`);
+      const response = await fetch(
+        `${API_URL}/produtos/${produto.id}/processos`
+      );
       if (!response.ok) {
         throw new Error("Erro ao buscar os processos");
       }
@@ -93,8 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Monta a lista de processos
-      let htmlProcessos = '<h3 class="titles">Produção:</h3><ul><div class="displayModal">';
-      processos.forEach(processo => {
+      let htmlProcessos =
+        '<h3 class="titles">Produção:</h3><ul><div class="displayModal">';
+      processos.forEach((processo) => {
         htmlProcessos += ` 
           <li>
             <button>${processo.nome}</button>
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
          
         `;
       });
-      htmlProcessos += ' </div> </ul>';
+      htmlProcessos += " </div> </ul>";
       processosContainer.innerHTML = htmlProcessos;
     } catch (error) {
       console.error("Erro ao buscar processos:", error);
@@ -124,28 +126,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderProdutos(produtos) {
     contentItemList.innerHTML = "";
-    produtos.forEach(produto => {
+    produtos.forEach((produto) => {
       const li = document.createElement("li");
       li.classList.add("infos");
-  
+
       li.innerHTML = `
         <span id="idProduto">${produto.id}</span>
         <span id="produto">${produto.nome}</span>
         <span id="dataCadastro">${formatDate(produto.data_cadastro)}</span>
         <span id="status">${produto.status}</span> 
       `;
-  
+
       // Ao clicar em um produto, abre o modal
-      li.addEventListener("click", function() {
+      li.addEventListener("click", function () {
         renderProdutoDetalhes(produto);
         productModal.style.display = "flex";
         setTimeout(() => productModal.classList.add("show"), 10);
       });
-  
+
       contentItemList.appendChild(li);
     });
   }
-  
+
   // Fecha o modal
   function closeModal() {
     productModal.classList.remove("show");
@@ -153,16 +155,16 @@ document.addEventListener("DOMContentLoaded", () => {
       productModal.style.display = "none";
     }, 400);
   }
-  
+
   // Evento para fechar ao clicar no "x"
   spanClose.addEventListener("click", closeModal);
-  
+
   // Fecha o modal se o usuário clicar fora do conteúdo dele
-  window.addEventListener("click", function(event) {
+  window.addEventListener("click", function (event) {
     if (event.target === productModal) {
       closeModal();
     }
-  });  
+  });
 
   // Carrega os produtos assim que a página for carregada
   fetchProdutos();

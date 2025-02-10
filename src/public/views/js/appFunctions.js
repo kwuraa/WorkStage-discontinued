@@ -11,7 +11,7 @@ let isLeftMenuIsOpened = false;
 
 function toggleMenu(state) {
   // Define o estado do menu: se 'state' foi informado, usa-o; caso contrário, inverte o estado atual
-  isLeftMenuIsOpened = (state !== undefined) ? state : !isLeftMenuIsOpened;
+  isLeftMenuIsOpened = state !== undefined ? state : !isLeftMenuIsOpened;
 
   // Atualiza classes da sidebar
   mySideBar.classList.toggle("opened", isLeftMenuIsOpened);
@@ -52,12 +52,12 @@ function atualizarEstadoBotoes() {
 
   // Se a sidebar estiver fechada, desativa os botões; se estiver aberta, ativa-os
   if (sidebar.classList.contains("closed")) {
-    botoes.forEach(botao => {
+    botoes.forEach((botao) => {
       botao.disabled = true;
       botao.classList.remove("hover");
     });
   } else {
-    botoes.forEach(botao => {
+    botoes.forEach((botao) => {
       botao.disabled = false;
       botao.classList.add("hover");
     });
@@ -68,30 +68,30 @@ function atualizarEstadoBotoes() {
 menuBtn.addEventListener("click", () => toggleMenu());
 overlay.addEventListener("click", () => toggleMenu(false));
 
-
 // SEARCH BAR
 
-const searchBar = document.querySelector('.searchBar');
-const searchInput = document.querySelector('.searchBar input');
-const overlayInfos = document.querySelector('.overlayInfos');
+const searchBar = document.querySelector(".searchBar");
+const searchInput = document.querySelector(".searchBar input");
+const overlayInfos = document.querySelector(".overlayInfos");
 
-searchBar.addEventListener('click', () => {
-  searchBar.classList.add('open');
-  overlayInfos.style.display = 'block'; 
-  overlayInfos.style.opacity = '1'; 
+searchBar.addEventListener("click", () => {
+  searchBar.classList.add("open");
+  overlayInfos.style.display = "block";
+  overlayInfos.style.opacity = "1";
   searchInput.focus();
 });
 
-document.addEventListener('click', (event) => {
-  if (!searchBar.contains(event.target) && searchBar.classList.contains('open')) {
-    searchBar.classList.add('closing');
-    overlayInfos.style.opacity = '0'; 
-    
+document.addEventListener("click", (event) => {
+  if (
+    !searchBar.contains(event.target) &&
+    searchBar.classList.contains("open")
+  ) {
+    searchBar.classList.add("closing");
+    overlayInfos.style.opacity = "0";
+
     setTimeout(() => {
-      searchBar.classList.remove('open', 'closing');
-      overlayInfos.style.display = 'none'; 
+      searchBar.classList.remove("open", "closing");
+      overlayInfos.style.display = "none";
     }, 300);
   }
 });
-
-

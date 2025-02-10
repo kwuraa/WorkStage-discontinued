@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- EVITAR ATAQUES DE CROSS SITE SCRIPTING (INJEÇÃO DE DADOS) -->
-   
 
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/index.css" />
@@ -41,34 +40,36 @@
 
       <!-- Área principal -->
       <div class="contentArea">
-
         <!-- Modal -->
         <div id="productModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <div id="modalProductContent">
-              
-            </div>
+            <div id="modalProductContent"></div>
           </div>
         </div>
         <!-- Barra de cima -->
         <div id="mytopLabel" class="topLabel">
           <div class="content">
-              <div class="searchBar">
-                <button
+            <div class="searchBar">
+              <button
                 id="searchBtn"
                 class="leftBtn searchBtn icon-search"
                 aria-label="Pesquisar"
               ></button>
-                <input id="searchInput" type="text" placeholder="Search" id="search">
-              </div>
-              <div class="overlayInfos"></div>
-              <div class="infos">
-                <span class="id">ID</span>
-                <span class="produtos">Produtos</span>
-                <span class="cadastro">Data de Cadastro</span>
-                <span class="status">Status</span>
-              </div>
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search"
+                id="search"
+              />
+            </div>
+            <div class="overlayInfos"></div>
+            <div class="infos">
+              <span class="id">ID</span>
+              <span class="produtos">Produtos</span>
+              <span class="cadastro">Data de Cadastro</span>
+              <span class="status">Status</span>
+            </div>
           </div>
         </div>
         <!-- Barra lateral -->
@@ -80,7 +81,9 @@
                 class="menuBtn leftBtn icon-menu"
                 aria-label="Alternar menu"
               ></button>
-              <label for="showHideMenus" class="labelBtn labelClose">Menu</label>
+              <label for="showHideMenus" class="labelBtn labelClose"
+                >Menu</label
+              >
             </div>
             <div class="unitButtons">
               <button
@@ -88,7 +91,7 @@
                 class="btnNotEvent addBtn leftBtn icon-add-circle"
                 aria-label="Adicionar"
               ></button>
-              <label for="addBtn" class=" labelBtn labelClose">Adicionar</label>
+              <label for="addBtn" class="labelBtn labelClose">Adicionar</label>
             </div>
 
             <div class="unitButtons">
@@ -117,13 +120,27 @@
         </div>
         <div id="overlay"></div>
         <div class="contentPages">
-          <div class="contentProductList"><ul>
-           <div class="contentItemList" id="contentItemList">
-            <li class="infos "><span id="idProduto">12</span><span id="produto">XXXXXXX</span><span id="dataCadastro">12/12/2000</span> <span id="status">pendente</span></li>
-            <li class="infos "><span id="idProduto">12</span><span id="produto">XXXXXXX</span><span id="dataCadastro">12/12/2000</span> <span id="status">pendente</span></li>
-            <li class="infos "><span id="idProduto">12</span><span id="produto">XXXXXXX</span><span id="dataCadastro">12/12/2000</span> <span id="status">pendente</span></li>
-           </div>
-          </ul></div>
+          <div class="contentProductList">
+            <ul>
+              <div class="contentItemList" id="contentItemList">
+                <li class="infos">
+                  <span id="idProduto">12</span><span id="produto">XXXXXXX</span
+                  ><span id="dataCadastro">12/12/2000</span>
+                  <span id="status">pendente</span>
+                </li>
+                <li class="infos">
+                  <span id="idProduto">12</span><span id="produto">XXXXXXX</span
+                  ><span id="dataCadastro">12/12/2000</span>
+                  <span id="status">pendente</span>
+                </li>
+                <li class="infos">
+                  <span id="idProduto">12</span><span id="produto">XXXXXXX</span
+                  ><span id="dataCadastro">12/12/2000</span>
+                  <span id="status">pendente</span>
+                </li>
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

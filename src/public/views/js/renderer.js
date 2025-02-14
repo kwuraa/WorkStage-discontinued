@@ -60,9 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <div class="description">
     <h3 class="titles">Descrição:</h3> 
-    <div class="displayDetails"
+    <div class="displayDetails">
       <p>ID: ${produto.id}</p>
       <p>Data de Cadastro: ${formatDate(produto.data_cadastro)}</p>
+      <p>${produto.descricao}</p>
       </div>
     </div>
     <div class="process">

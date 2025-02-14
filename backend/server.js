@@ -19,6 +19,7 @@ db.serialize(() => {
   db.run(`CREATE TABLE IF NOT EXISTS produtos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
+        descricao TEXT NOT NULL DEFAULT '',
         status TEXT NOT NULL DEFAULT 'pendente',
         data_cadastro TEXT NOT NULL DEFAULT (datetime('now', 'localtime'))
     )`);
@@ -34,18 +35,22 @@ db.serialize(() => {
   db.run(`CREATE TABLE IF NOT EXISTS historico_produtos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
+        descricao TEXT NOT NULL,
         data_cadastro TEXT NOT NULL,
         data_finalizacao TEXT NOT NULL DEFAULT (datetime('now', 'localtime'))
     )`);
 });
 
+
 //  Criar um novo produto
+// Criar um novo produto (com descrição opcional)
 app.post("/produtos", (req, res) => {
-  const { nome, processos } = req.body;
+  const { nome, descricao, processos } = req.body;
   if (!nome)
     return res.status(400).json({ error: "Nome do produto é obrigatório" });
 
-  db.run(`INSERT INTO produtos (nome) VALUES (?)`, [nome], function (err) {
+  // Insere o produto com nome e descrição
+  db.run(`INSERT INTO produtos (nome, descricao) VALUES (?, ?)`, [nome, descricao || ''], function (err) {
     if (err) return res.status(500).json({ error: err.message });
 
     const produtoId = this.lastID;
@@ -58,14 +63,13 @@ app.post("/produtos", (req, res) => {
       stmt.finalize();
     }
 
-    res
-      .status(201)
-      .json({
-        id: produtoId,
-        nome,
-        status: "pendente",
-        processos: processos || [],
-      });
+    res.status(201).json({
+      id: produtoId,
+      nome,
+      descricao: descricao || '',
+      status: "pendente",
+      processos: processos || [],
+    });
   });
 });
 

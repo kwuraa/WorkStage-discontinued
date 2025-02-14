@@ -1,0 +1,172 @@
+/* cadastroModal.css */
+/* Estilos para o modal de cadastro de produto */
+.modalAdd {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+    overflow: unset;
+  }
+  
+  .modal-contentAdd {
+    background-color: var(--dark-background-color);
+    border-radius: 20px;
+    margin: 6% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    padding: 2%;
+    
+  }
+
+  .containerAdd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #353535;
+    box-shadow:
+    0px 8px 10px 2px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 0px rgba(0, 0, 0, 0.12),
+    0px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 10%;
+    width: 100%;
+  }
+
+  .containerAdd form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .modal-contentAdd .close {
+    color: #aaa;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-contentAdd .close:hover,
+  .modal-contentAdd .close:focus {
+    color: #805ea1;
+  }
+  
+  .processo-input {
+    display: flex;
+    margin-bottom: 5px;
+    width: 185px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+
+  .containerAdd input {
+    background-color: transparent;
+    border: 1px solid #E2E1E4;
+    border-radius: 20px;
+    padding-left: 10px;
+    width: 90%;
+    height: 40px;
+    outline: none;
+    font-size: 0.75rem;
+  }
+  .containerAdd input#nome {
+    width: 520px;
+  }
+
+  .containerAdd input:focus {
+    border: 1px solid #805ea1;
+    
+  }
+  
+  .name::placeholder {
+    font-size: 0.75rem;
+    color: #E2E1E4;
+    font-weight: 500;
+    position: relative;
+    bottom: 1px;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+
+  .name:focus::placeholder {
+    opacity: 0;
+  }
+
+  textarea {
+    background-color: transparent;
+    all: unset;            
+    display: block;         
+    width: 543px;           
+    height: 150px;          
+    border: 1px solid #E2E1E4; 
+    border-radius: 20px;
+    padding: 10px;          
+    resize: none;  
+    transition: 0.3s ease-in-out;
+    font-size: 0.8rem;
+  }
+ 
+  textarea:focus {
+    border: 1px solid #805ea1; 
+  }
+
+  .styleBtn {
+    all: unset;
+    background-color: transparent;
+    width: 55px;
+    display: inline-block
+  }
+
+  .titleProcess  {
+    position: static !important;
+  }
+  
+  .processosContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .buttonsModal {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
+  /* submit button */
+.btn {
+    width: 86px;
+    height: 52px;
+    padding-left: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #E2E1E4;
+    border-radius: 25px;
+    border: 1px solid #E2E1E4; 
+    letter-spacing: 2px;
+    background-color: transparent;
+    box-shadow:
+    0px 8px 10px 2px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 0px rgba(0, 0, 0, 0.12),
+    0px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:hover {
+    color: #805ea1;
+    border: 1px solid #805ea1;
+    transition: all .3s ease;
+  }
+  

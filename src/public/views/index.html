@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/itensList.css" />
     <link rel="stylesheet" href="../css/modalDetails.css" />
+    <link rel="stylesheet" href="../css/modalAdd.css" />
     <title>WorkStages</title>
   </head>
   <body>
@@ -46,6 +47,41 @@
             <span class="close">&times;</span>
             <div id="modalProductContent"></div>
           </div>
+        </div>
+
+        <div id="cadastroModal" class="modalAdd">
+          <div class="modal-contentAdd">
+            <div class="containerAdd">
+            <span class="close">&times;</span>
+            <h2>Cadastrar Produto</h2>
+            <form id="produtoForm">
+              <!-- Nome do Produto -->
+              <label for="nome" class="name">Nome do Produto:</label>
+              <input class="name" placeholder="Nome" type="text" id="nome" name="nome" required />
+              
+
+              <!-- Descrição do Produto -->
+              <label for="descricao">Descrição do Produto:</label>
+              <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea>
+              
+
+              <!-- Inputs dinâmicos para Processos -->
+              <h3 class="titleProcess">Processos</h3>
+              <div class="processosContainer" id="processosContainer">
+                
+                <!-- Os inputs para processos serão adicionados aqui -->
+              </div>
+              <div class="buttonsModal">
+              <button type="button" class="iconPlus addButton styleBtn" id="addProcessoBtn"></button>
+             
+
+              <button type="submit" class="btn styleBtn">
+                Enviar
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
         </div>
         <!-- Barra de cima -->
         <div id="mytopLabel" class="topLabel">

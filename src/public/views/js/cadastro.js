@@ -1,5 +1,3 @@
-/* cadastroModal.js */
-
 // Seleciona os elementos
 const cadastroModal = document.getElementById("cadastroModal");
 const addBtn = document.getElementById("addBtn");
@@ -46,7 +44,7 @@ addProcessoBtn.addEventListener("click", () => {
 
   const removeBtn = document.createElement("button");
   removeBtn.type = "button";
-  removeBtn.textContent = "X";
+  removeBtn.innerHTML = '<img class="closeBtn" src="../img/icons/close.svg" />';
   removeBtn.classList.add("formBtn", "styleBtn");
   removeBtn.addEventListener("click", () => {
     processosContainer.removeChild(inputWrapper);
@@ -100,6 +98,7 @@ produtoForm.addEventListener("submit", (event) => {
 
       // Fecha o modal com a transição de opacity
       closeModal();
+      window.location.reload();
     })
     .catch((error) => {
       console.error("Erro:", error);

@@ -31,6 +31,15 @@ closeBtn.addEventListener("click", () => {
   ipc.send("closeApp");
 });
 
+// Função para formatar data
+function formatDate(dataStr) {
+  const date = new Date(dataStr);
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
 // backend for database
 const API_URL = "http://localhost:3000";
 
@@ -39,15 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const productModal = document.getElementById("productModal");
   const modalProductContent = document.getElementById("modalProductContent");
   const spanClose = document.querySelector(".close");
-
-  // Função para formatar data
-  function formatDate(dataStr) {
-    const date = new Date(dataStr);
-    const day = date.getDate().toString().padStart(2, "0");
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
 
   // Função para renderizar os detalhes do produto, incluindo seus processos
   async function renderProdutoDetalhes(produto) {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="displayDetails">
       <p>ID: ${produto.id}</p>
       <p>Data de Cadastro: ${formatDate(produto.data_cadastro)}</p>
-      <p>${produto.descricao}</p>
+      <p class="descricao">${produto.descricao}</p>
       </div>
     </div>
     <div class="process">
@@ -168,5 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Carrega os produtos assim que a página for carregada
+  atualizarEstadoBotoes();
   fetchProdutos();
 });

@@ -1,61 +1,68 @@
-# 🖥️ WorkStage  
+# 🖥️ WorkStage
 
-WorkStage é um aplicativo desenvolvido com Electron Framework para gerenciar o progresso de produção. Ele permite cadastrar produtos, acompanhar suas etapas e visualizar o status em tempo real. Com foco em organização e eficiência, o app visa otimizar o fluxo de trabalho, oferecendo controle simples e prático das fases de produção.  
+WorkStage é um aplicativo desenvolvido com Electron Framework para gerenciar o progresso de produção. Ele permite cadastrar produtos, acompanhar suas etapas e visualizar o status em tempo real. Com foco em organização e eficiência, o app visa otimizar o fluxo de trabalho, oferecendo controle simples e prático das fases de produção.
 
-## 🚀 Tecnologias Utilizadas  
+## 🚀 Tecnologias Utilizadas
 
-- **Electron**: Framework para criação de aplicativos desktop com tecnologias web.  
-- **JavaScript, HTML, CSS**: Para a interface e funcionalidades do aplicativo.  
+- **Electron**: Framework para criação de aplicativos desktop com tecnologias web.
+- **JavaScript, HTML, CSS**: Para a interface e funcionalidades do aplicativo.
 
-## 🛠️ Funcionalidades  
+## 🛠️ Funcionalidades
 
-- 📋 Cadastro de produtos para rastreamento do progresso de produção.  
-- 🔄 Atualização de status de cada etapa de produção.  
-- 📊 Visualização em tempo real do andamento da produção.  
+- 📋 Cadastro de produtos para rastreamento do progresso de produção.
+- 🔄 Atualização de status de cada etapa de produção.
+- 📊 Visualização em tempo real do andamento da produção.
 
-## 📂 Estrutura do Projeto  
+## 📂 Estrutura do Projeto
 
 ```
-├── backend
-├── src
-│   ├── public
-├── .gitignore
-├── LICENSE
-├── README.md
-├── main.js
-├── package-lock.json
-├── package.json
-├── preload.js
+WorkStage/
+├── backend/
+│   ├── controllers/        # Lógica de controle e gerenciamento de dados
+│   ├── models/             # Definição dos modelos de dados (ex.: produto, etapa)
+│   └── services/           # Serviços e regras de negócio
+├── src/
+│   ├── public/             # Arquivos públicos (HTML, CSS, JavaScript para o renderer)
+│   │   ├── css/            # Arquivos de estilo
+│   │   ├── js/             # Scripts específicos da interface
+│   │   └── index.html      # Arquivo principal da interface
+├── main.js                 # Arquivo principal que inicializa o Electron
+├── preload.js              # Script de preload para expor APIs seguras ao renderer
+├── windowManager.js        # Módulo responsável pela criação e gerenciamento das janelas
+├── package.json            # Configurações e dependências do projeto
+├── package-lock.json       # Travamento de versões das dependências
+└── README.md               # Documentação e informações sobre o projeto
+
 ```
 
-## 📋 Pré-requisitos  
+## 📋 Pré-requisitos
 
-Para executar o WorkStage localmente, você precisará de:  
+Para executar o WorkStage localmente, você precisará de:
 
-- **Node.js** instalado  
-- **Electron** instalado globalmente (`npm install -g electron`)  
+- **Node.js** instalado
+- **Electron** instalado globalmente (`npm install -g electron`)
 
-### Passos para rodar o projeto:  
+### Passos para rodar o projeto:
 
-1. Clone este repositório:  
+1. Clone este repositório:
 
    ```sh
    git clone https://github.com/kwuraa/WorkStage.git
    cd WorkStage
-   ```  
+   ```
 
-2. Instale as dependências:  
+2. Instale as dependências:
 
    ```sh
    npm install
-   ```  
+   ```
 
-3. Inicie o aplicativo:  
+3. Inicie o aplicativo:
 
    ```sh
    npm start
-   ```  
+   ```
 
-## 📄 Licença  
+## 📄 Licença
 
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.  
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.

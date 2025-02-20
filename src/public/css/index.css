@@ -26,63 +26,6 @@
   -webkit-user-select: none;
 }
 
-.topBar .titleBar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.topBar .titleBarBtns {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  padding-right: 10px;
-}
-
-.titleBar .title {
-  margin: 5px 0 5px 10px;
-  width: 100%;
-  line-height: 30px;
-  -webkit-app-region: drag;
-}
-
-.titleBarBtns .topBtn {
-  width: 25px;
-  height: 25px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.titleBarBtns .topBtn:hover {
-  background-color: #272c36;
-}
-
-.titleBarBtns .topBtn:active {
-  background-color: #6d4f8c;
-}
-
-.titleBarBtns .minimizeBtn {
-  background-image: url(../img/icons/minimize.svg);
-}
-
-.titleBarBtns .maximizeBtn {
-  background-image: url(../img/icons/maximize.svg);
-}
-
-.titleBarBtns .restoreBtn {
-  background-image: url(../img/icons/restore.svg);
-}
-
-.titleBarBtns .closeBtn {
-  background-image: url(../img/icons/close.svg);
-}
-
 /* * MAIN CONTENT */
 .mainApp .contentArea {
   display: flex;
@@ -323,7 +266,7 @@
 .logo,
 .logoClose {
   display: inline-block;
-  background-image: url("../img/icons/oldlogo.svg");
+  background-image: url("./img/icons/oldlogo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 56px;
@@ -332,7 +275,7 @@
 }
 
 .logoOpen {
-  background-image: url("../img/icons/oldLogoOpen.svg");
+  background-image: url("./img/icons/oldLogoOpen.svg");
   width: 245px;
 }
 

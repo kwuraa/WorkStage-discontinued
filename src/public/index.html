@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- EVITAR ATAQUES DE CROSS SITE SCRIPTING (INJEÇÃO DE DADOS) -->
-
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/itensList.css" />
-    <link rel="stylesheet" href="../css/modalDetails.css" />
-    <link rel="stylesheet" href="../css/modalAdd.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/itensList.css" />
+    <link rel="stylesheet" href="./css/modalDetails.css" />
+    <link rel="stylesheet" href="./css/modalAdd.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -49,7 +46,9 @@
         <div id="productModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <div id="modalProductContent"></div>
+            <div id="modalProductContent">
+              <!-- ? DETALHES DOS PRODUTOS -->
+            </div>
           </div>
         </div>
 
@@ -59,7 +58,7 @@
               <span class="close">&times;</span>
               <h2>Cadastrar Produto</h2>
               <form id="produtoForm">
-                <!-- Nome do Produto -->
+                <!--  Nome do Produto -->
                 <label for="nome" class="name">Nome do Produto:</label>
                 <input
                   class="name"
@@ -70,7 +69,7 @@
                   required
                 />
 
-                <!-- Descrição do Produto -->
+                <!-- ? Descrição do Produto -->
                 <label for="descricao">Descrição do Produto:</label>
                 <textarea
                   id="descricao"
@@ -80,10 +79,10 @@
                   required
                 ></textarea>
 
-                <!-- Inputs dinâmicos para Processos -->
+                <!-- ? Inputs dinâmicos para Processos -->
                 <h3 class="titleProcess">Processos</h3>
                 <div class="processosContainer" id="processosContainer">
-                  <!-- Os inputs para processos serão adicionados aqui -->
+                  <!-- ? Os inputs para processos serão adicionados aqui -->
                 </div>
                 <div class="buttonsModal">
                   <button
@@ -174,21 +173,7 @@
           <div class="contentProductList">
             <ul>
               <div class="contentItemList" id="contentItemList">
-                <li class="infos">
-                  <span id="idProduto">12</span><span id="produto">XXXXXXX</span
-                  ><span id="dataCadastro">12/12/2000</span>
-                  <span id="status">pendente</span>
-                </li>
-                <li class="infos">
-                  <span id="idProduto">12</span><span id="produto">XXXXXXX</span
-                  ><span id="dataCadastro">12/12/2000</span>
-                  <span id="status">pendente</span>
-                </li>
-                <li class="infos">
-                  <span id="idProduto">12</span><span id="produto">XXXXXXX</span
-                  ><span id="dataCadastro">12/12/2000</span>
-                  <span id="status">pendente</span>
-                </li>
+                <!-- ? lISTA DE PRODUTOS  -->
               </div>
             </ul>
           </div>
@@ -197,7 +182,9 @@
     </div>
 
     <script src="js/renderer.js"></script>
-    <script src="js/appFunctions.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/cadastro.js"></script>
+    <script src="js/seachBar.js"></script>
+    <script src="js/products.js"></script>
   </body>
 </html>

@@ -44,7 +44,8 @@ addProcessoBtn.addEventListener("click", () => {
 
   const removeBtn = document.createElement("button");
   removeBtn.type = "button";
-  removeBtn.innerHTML = '<img class="closeBtn" src="../img/icons/close.svg" />';
+  removeBtn.innerHTML =
+    '<img class="closeBtn" src="./css/img/icons/close.svg" />';
   removeBtn.classList.add("formBtn", "styleBtn");
   removeBtn.addEventListener("click", () => {
     processosContainer.removeChild(inputWrapper);

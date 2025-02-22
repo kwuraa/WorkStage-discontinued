@@ -1,3 +1,10 @@
+:root {
+  /* Variáveis para cores de botões na title bar */
+  --topbtn-hover-bg: #272c36;
+  --topbtn-active-bg: #6d4f8c;
+}
+
+/* Definição de fontes */
 @font-face {
   font-family: "Poppins";
   src: url("./fonts/Poppins-Medium.ttf");
@@ -11,12 +18,12 @@
     url("./fonts/icomoon.ttf?qsy80o") format("truetype"),
     url("./fonts/icomoon.woff?qsy80o") format("woff"),
     url("./fonts/icomoon.svg?qsy80o#icomoon") format("svg");
-
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
+/* Configuração dos ícones */
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: "icomoon" !important;
@@ -26,8 +33,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
+  /* Melhor renderização de fontes */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -100,17 +106,17 @@
   cursor: pointer;
 }
 
+/* Estilos globais */
 * {
   margin: 0;
   padding: 0;
-
   font-family: "Poppins", sans-serif;
   font-size: 15pt;
   color: var(--text-icons-color);
-
   box-sizing: border-box;
 }
 
+/* Estilos para a title bar */
 .topBar .titleBar {
   display: flex;
   flex-direction: row;
@@ -145,13 +151,14 @@
 }
 
 .titleBarBtns .topBtn:hover {
-  background-color: #272c36;
+  background-color: var(--topbtn-hover-bg);
 }
 
 .titleBarBtns .topBtn:active {
-  background-color: #6d4f8c;
+  background-color: var(--topbtn-active-bg);
 }
 
+/* Ícones dos botões */
 .titleBarBtns .minimizeBtn {
   background-image: url(./img/icons/minimize.svg);
 }

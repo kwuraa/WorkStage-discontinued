@@ -1,4 +1,7 @@
-# 🖥️ WorkStage
+# 🖥️ WorkStage - (discontinued)
+
+### Este repositório está arquivado e não receberá mais atualizações, pois migramos o projeto para uma nova tecnologia visando melhorias de performance e manutenção. Para acompanhar as novidades e contribuir, acesse o novo repositório: [https://github.com/kwuraa/WorkStage-New].
+
 
 WorkStage é um aplicativo desenvolvido com Electron Framework para gerenciar o progresso de produção. Ele permite cadastrar produtos, acompanhar suas etapas e visualizar o status em tempo real. Com foco em organização e eficiência, o app visa otimizar o fluxo de trabalho, oferecendo controle simples e prático das fases de produção.
 
